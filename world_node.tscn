@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqn0ypi8e5jg3"]
+[gd_scene load_steps=6 format=3 uid="uid://bqn0ypi8e5jg3"]
 
 [ext_resource type="Texture2D" uid="uid://bga05661llvsc" path="res://icon.svg" id="1_prwiq"]
 [ext_resource type="PackedScene" uid="uid://b348iyeanmyoc" path="res://player_body.tscn" id="2_folq2"]
 [ext_resource type="Script" path="res://SpawnPoints.gd" id="3_u7e86"]
+[ext_resource type="Script" path="res://Score_label.gd" id="4_vmr08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i40n8"]
 size = Vector2(127, 127)
@@ -42,7 +43,7 @@ texture = ExtResource("1_prwiq")
 position = Vector2(576, 336)
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_folq2")]
-position = Vector2(570, 340)
+position = Vector2(568, 336)
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 script = ExtResource("3_u7e86")
@@ -80,4 +81,17 @@ position = Vector2(1184, 608)
 [node name="Timer" type="Timer" parent="SpawnPoints"]
 autostart = true
 
+[node name="Score_label" type="Label" parent="."]
+offset_left = 536.0
+offset_top = 8.0
+offset_right = 582.0
+offset_bottom = 31.0
+scale = Vector2(1.75999, 1.75999)
+text = "99999"
+script = ExtResource("4_vmr08")
+
+[node name="score_timer" type="Timer" parent="Score_label"]
+autostart = true
+
 [connection signal="timeout" from="SpawnPoints/Timer" to="SpawnPoints" method="_on_timer_timeout"]
+[connection signal="timeout" from="Score_label/score_timer" to="Score_label" method="_on_score_timer_timeout"]

@@ -4,3 +4,4 @@ res://global.gd
 res://spike_node.gd
 res://SpawnPoints.gd
 res://player_body.gd
+res://Score_label.gd
