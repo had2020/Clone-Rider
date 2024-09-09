@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqn0ypi8e5jg3"]
 
 [ext_resource type="Texture2D" uid="uid://bga05661llvsc" path="res://icon.svg" id="1_prwiq"]
-[ext_resource type="PackedScene" uid="uid://ckdki8hiugt8n" path="res://player.tscn" id="2_kokc1"]
+[ext_resource type="PackedScene" uid="uid://b348iyeanmyoc" path="res://player_body.tscn" id="2_folq2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i40n8"]
 size = Vector2(127, 127)
@@ -22,8 +22,23 @@ shape = SubResource("RectangleShape2D_i40n8")
 self_modulate = Color(0.400698, 0.400698, 0.400698, 1)
 texture = ExtResource("1_prwiq")
 
-[node name="Player" parent="." instance=ExtResource("2_kokc1")]
-position = Vector2(584, 434)
+[node name="Roof" type="Node2D" parent="."]
+position = Vector2(579, 644)
+scale = Vector2(9.06631, 0.183537)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Roof"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Roof/StaticBody2D"]
+position = Vector2(-0.551494, -3432.55)
+shape = SubResource("RectangleShape2D_i40n8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Roof/StaticBody2D"]
+self_modulate = Color(0.400698, 0.400698, 0.400698, 1)
+position = Vector2(-0.220597, -3432.55)
+texture = ExtResource("1_prwiq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(578, 333)
+
+[node name="PlayerBody" parent="." instance=ExtResource("2_folq2")]
+position = Vector2(574, 347)
