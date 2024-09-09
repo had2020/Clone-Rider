@@ -10,9 +10,17 @@ size = Vector2(128, 128)
 script = ExtResource("1_7p4yr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.5, 0.8)
 texture = ExtResource("1_s8umy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.5, 0.8)
 shape = SubResource("RectangleShape2D_rirgr")
+
+[node name="PlayerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
+scale = Vector2(0.5, 0.8)
+shape = SubResource("RectangleShape2D_rirgr")
+
+[connection signal="area_entered" from="PlayerArea" to="." method="_on_player_area_area_entered"]

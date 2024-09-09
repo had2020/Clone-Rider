@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 
@@ -16,3 +15,11 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 
 	move_and_slide()
+
+func _on_player_area_area_entered(area):
+	if area.is_in_group("Damage"):
+		var heart_gui = preload("res://heart_gui.tscn").instantiate()
+		Global.lives = Global.lives - 1
+		add_sibling(heart_gui)
+		if Global.lives == 0:
+			get_tree().reload_current_scene() #Reloads game from start

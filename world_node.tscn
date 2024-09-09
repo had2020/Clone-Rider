@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqn0ypi8e5jg3"]
+[gd_scene load_steps=5 format=3 uid="uid://bqn0ypi8e5jg3"]
 
 [ext_resource type="Texture2D" uid="uid://bga05661llvsc" path="res://icon.svg" id="1_prwiq"]
 [ext_resource type="PackedScene" uid="uid://b348iyeanmyoc" path="res://player_body.tscn" id="2_folq2"]
+[ext_resource type="Script" path="res://SpawnPoints.gd" id="3_u7e86"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i40n8"]
 size = Vector2(127, 127)
@@ -38,7 +39,45 @@ position = Vector2(-0.220597, -3432.55)
 texture = ExtResource("1_prwiq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(578, 333)
+position = Vector2(576, 336)
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_folq2")]
-position = Vector2(574, 347)
+position = Vector2(570, 340)
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+script = ExtResource("3_u7e86")
+
+[node name="Spawn1" type="Node2D" parent="SpawnPoints"]
+position = Vector2(1184, 32)
+
+[node name="Spawn2" type="Node2D" parent="SpawnPoints"]
+position = Vector2(1184, 96)
+
+[node name="Spawn3" type="Node2D" parent="SpawnPoints"]
+position = Vector2(1184, 160)
+
+[node name="Spawn4" type="Node2D" parent="SpawnPoints"]
+position = Vector2(1184, 224)
+
+[node name="Spawn5" type="Node2D" parent="SpawnPoints"]
+position = Vector2(1184, 288)
+
+[node name="Spawn6" type="Node2D" parent="SpawnPoints"]
+position = Vector2(1184, 352)
+
+[node name="Spawn7" type="Node2D" parent="SpawnPoints"]
+position = Vector2(1184, 416)
+
+[node name="Spawn8" type="Node2D" parent="SpawnPoints"]
+position = Vector2(1184, 480)
+
+[node name="Spawn9" type="Node2D" parent="SpawnPoints"]
+position = Vector2(1184, 544)
+
+[node name="Spawn10" type="Node2D" parent="SpawnPoints"]
+position = Vector2(1184, 608)
+
+[node name="Timer" type="Timer" parent="SpawnPoints"]
+autostart = true
+
+[connection signal="timeout" from="SpawnPoints/Timer" to="SpawnPoints" method="_on_timer_timeout"]

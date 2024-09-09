@@ -1,4 +1,6 @@
 res://world_node.tscn
-res://player_body.tscn
+res://spike_node.tscn
+res://global.gd
+res://spike_node.gd
+res://SpawnPoints.gd
 res://player_body.gd
-res://player.gd

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://2i2knex0snk1"]
+
+[ext_resource type="Texture2D" uid="uid://bga05661llvsc" path="res://icon.svg" id="1_hva0q"]
+[ext_resource type="Script" path="res://spike_node.gd" id="1_rj3ai"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q7x0"]
+size = Vector2(126, 128)
+
+[node name="Spike-node" type="Node2D"]
+script = ExtResource("1_rj3ai")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Damage"]]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_2q7x0")
+
+[node name="Spike_sprite" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.458824, 0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_hva0q")
+
+[node name="Move_Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Move_Timer" to="." method="_on_timer_timeout"]
