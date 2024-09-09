@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqn0ypi8e5jg3"]
+
+[ext_resource type="Texture2D" uid="uid://bga05661llvsc" path="res://icon.svg" id="1_prwiq"]
+[ext_resource type="PackedScene" uid="uid://ckdki8hiugt8n" path="res://player.tscn" id="2_kokc1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i40n8"]
+size = Vector2(127, 127)
+
+[node name="World_node" type="Node2D"]
+
+[node name="Floor" type="Node2D" parent="."]
+position = Vector2(579, 644)
+scale = Vector2(9.06631, 0.183537)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_i40n8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor/StaticBody2D"]
+self_modulate = Color(0.400698, 0.400698, 0.400698, 1)
+texture = ExtResource("1_prwiq")
+
+[node name="Player" parent="." instance=ExtResource("2_kokc1")]
+position = Vector2(584, 434)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(578, 333)
