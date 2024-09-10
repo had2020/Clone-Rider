@@ -13,6 +13,11 @@ func _ready():
 		$HeartFull3.visible = false
 		$HeartFull2.visible = false
 		$HeartFull1.visible = false
+	
+	High_Score()
 
 func _on_vanish_timer_timeout():
 	self.queue_free()
+
+func High_Score():
+	$"High Score Label".text = "High Score: " + str(Global.high_score)

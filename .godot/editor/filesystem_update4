@@ -1,6 +1,4 @@
 res://world_node.tscn
-res://global.gd
 res://Score_label.gd
-res://player_body.gd
-res://Save.gd
 res://heart_gui.tscn
+res://heart_gui.gd
