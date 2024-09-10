@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b348iyeanmyoc"]
 
 [ext_resource type="Script" path="res://player_body.gd" id="1_7p4yr"]
-[ext_resource type="Texture2D" uid="uid://bga05661llvsc" path="res://icon.svg" id="1_s8umy"]
+[ext_resource type="Texture2D" uid="uid://5ukxwagkx5mv" path="res://assets/prechom.png" id="2_x4tpj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rirgr"]
 size = Vector2(128, 128)
@@ -10,8 +10,10 @@ size = Vector2(128, 128)
 script = ExtResource("1_7p4yr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.8)
-texture = ExtResource("1_s8umy")
+texture_filter = 1
+position = Vector2(1.90735e-06, 1.90735e-06)
+scale = Vector2(4.92308, 4.43478)
+texture = ExtResource("2_x4tpj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.5, 0.8)
