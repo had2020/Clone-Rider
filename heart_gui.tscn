@@ -40,4 +40,12 @@ texture = ExtResource("1_p8al2")
 [node name="Vanish_Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="High Score Label" type="Label" parent="."]
+offset_left = -90.0
+offset_top = -136.0
+offset_right = 47.0
+offset_bottom = -113.0
+scale = Vector2(1.3875, 1.3875)
+text = "High Score: 9999"
+
 [connection signal="timeout" from="Vanish_Timer" to="." method="_on_vanish_timer_timeout"]

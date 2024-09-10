@@ -1,7 +1,6 @@
 res://world_node.tscn
-res://spike_node.tscn
 res://global.gd
-res://spike_node.gd
-res://SpawnPoints.gd
-res://player_body.gd
 res://Score_label.gd
+res://player_body.gd
+res://Save.gd
+res://heart_gui.tscn

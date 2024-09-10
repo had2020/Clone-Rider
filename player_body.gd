@@ -27,4 +27,6 @@ func _on_player_area_area_entered(area):
 		Global.lives = Global.lives - 1
 		add_sibling(heart_gui)
 		if Global.lives == 0:
+			$"../Score_label".finish()
 			get_tree().reload_current_scene() #Reloads game from start
+
