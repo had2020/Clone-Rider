@@ -1,17 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqn0ypi8e5jg3"]
+[gd_scene load_steps=10 format=3 uid="uid://bqn0ypi8e5jg3"]
 
 [ext_resource type="Texture2D" uid="uid://bga05661llvsc" path="res://icon.svg" id="1_prwiq"]
 [ext_resource type="PackedScene" uid="uid://b348iyeanmyoc" path="res://player_body.tscn" id="2_folq2"]
+[ext_resource type="Texture2D" uid="uid://cy6au7dklp704" path="res://assets/grass.png" id="2_rgtuv"]
 [ext_resource type="Script" path="res://SpawnPoints.gd" id="3_u7e86"]
 [ext_resource type="Script" path="res://Score_label.gd" id="4_vmr08"]
+[ext_resource type="Texture2D" uid="uid://do0lwbir4uq27" path="res://assets/Arrows.png" id="6_g7p52"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i40n8"]
-size = Vector2(127, 127)
+size = Vector2(127, 63.5)
+
+[sub_resource type="Animation" id="Animation_go5v0"]
+resource_name = "moving"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("moving arrows:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1728, 320), Vector2(-752, 320)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("moving arrows:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0qugd"]
+_data = {
+"moving": SubResource("Animation_go5v0")
+}
 
 [node name="World_node" type="Node2D"]
 
 [node name="Floor" type="Node2D" parent="."]
-position = Vector2(579, 644)
+position = Vector2(576, 656)
+rotation = 0.000168726
 scale = Vector2(9.06631, 0.183537)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Floor"]
@@ -21,8 +56,15 @@ position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_i40n8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor/StaticBody2D"]
-self_modulate = Color(0.400698, 0.400698, 0.400698, 1)
+self_modulate = Color(0, 0, 0, 1)
+rotation = 0.00191036
 texture = ExtResource("1_prwiq")
+
+[node name="Area2D" type="Area2D" parent="Floor" groups=["floor"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/Area2D"]
+position = Vector2(-0.000295758, -87.1763)
+shape = SubResource("RectangleShape2D_i40n8")
 
 [node name="Roof" type="Node2D" parent="."]
 position = Vector2(579, 644)
@@ -35,9 +77,10 @@ position = Vector2(-0.551494, -3432.55)
 shape = SubResource("RectangleShape2D_i40n8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Roof/StaticBody2D"]
-self_modulate = Color(0.400698, 0.400698, 0.400698, 1)
+self_modulate = Color(0, 0, 0, 1)
 position = Vector2(-0.220597, -3432.55)
-texture = ExtResource("1_prwiq")
+scale = Vector2(2.6, 10)
+texture = ExtResource("2_rgtuv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 336)
@@ -93,5 +136,45 @@ script = ExtResource("4_vmr08")
 [node name="score_timer" type="Timer" parent="Score_label"]
 autostart = true
 
+[node name="moving arrows" type="Node2D" parent="."]
+z_index = -3
+position = Vector2(1728, 320)
+
+[node name="Sprite2D" type="Sprite2D" parent="moving arrows"]
+texture_filter = 1
+position = Vector2(-344, 0)
+scale = Vector2(10, 10)
+texture = ExtResource("6_g7p52")
+
+[node name="Sprite2D2" type="Sprite2D" parent="moving arrows"]
+texture_filter = 1
+position = Vector2(104, 3.05176e-05)
+scale = Vector2(10, 10)
+texture = ExtResource("6_g7p52")
+
+[node name="Sprite2D3" type="Sprite2D" parent="moving arrows"]
+texture_filter = 1
+position = Vector2(552, 3.05176e-05)
+scale = Vector2(10, 10)
+texture = ExtResource("6_g7p52")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0qugd")
+}
+speed_scale = 0.5
+
+[node name="animation_timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Background" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 0.623529)
+z_index = -6
+position = Vector2(576, 336)
+scale = Vector2(24, 65)
+texture = ExtResource("2_rgtuv")
+
 [connection signal="timeout" from="SpawnPoints/Timer" to="SpawnPoints" method="_on_timer_timeout"]
 [connection signal="timeout" from="Score_label/score_timer" to="Score_label" method="_on_score_timer_timeout"]
+[connection signal="timeout" from="animation_timer" to="PlayerBody" method="_on_animation_timer_timeout"]

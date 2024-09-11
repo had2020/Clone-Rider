@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5ukxwagkx5mv"
-path="res://.godot/imported/prechom.png-e990d9a73daf417ac81362fb0b452c04.ctex"
+uid="uid://b5lrnly3m0ki2"
+path="res://.godot/imported/playerwheel4.png-93d409ac94e4d357b5f5f375d7b8d75e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/prechom.png"
-dest_files=["res://.godot/imported/prechom.png-e990d9a73daf417ac81362fb0b452c04.ctex"]
+source_file="res://assets/playerwheel4.png"
+dest_files=["res://.godot/imported/playerwheel4.png-93d409ac94e4d357b5f5f375d7b8d75e.ctex"]
 
 [params]
 

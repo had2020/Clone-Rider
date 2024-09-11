@@ -1,28 +1,74 @@
-[gd_scene load_steps=4 format=3 uid="uid://b348iyeanmyoc"]
+[gd_scene load_steps=10 format=3 uid="uid://b348iyeanmyoc"]
 
 [ext_resource type="Script" path="res://player_body.gd" id="1_7p4yr"]
-[ext_resource type="Texture2D" uid="uid://5ukxwagkx5mv" path="res://assets/prechom.png" id="2_x4tpj"]
+[ext_resource type="Texture2D" uid="uid://bvyh65iirp01n" path="res://assets/playerwheel1.png" id="2_poqix"]
+[ext_resource type="Texture2D" uid="uid://borxfqub5hcov" path="res://assets/playerwheel2.png" id="3_eptdu"]
+[ext_resource type="Texture2D" uid="uid://bngqbxfhb6rew" path="res://assets/playerwheel3.png" id="4_brfi3"]
+[ext_resource type="Texture2D" uid="uid://b5lrnly3m0ki2" path="res://assets/playerwheel4.png" id="5_bite1"]
+[ext_resource type="Texture2D" uid="uid://d4bjymsuatyma" path="res://assets/Fireparticle.png" id="6_p5oqj"]
+[ext_resource type="Texture2D" uid="uid://ccr1th00c64vb" path="res://assets/firetail.png" id="7_mkou8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rirgr"]
-size = Vector2(128, 128)
+[sub_resource type="CircleShape2D" id="CircleShape2D_lw7o2"]
+radius = 57.1429
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gmjq2"]
+radius = 57.1607
 
 [node name="PlayerBody" type="CharacterBody2D"]
 script = ExtResource("1_7p4yr")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="wheel1" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1.90735e-06, 1.90735e-06)
-scale = Vector2(4.92308, 4.43478)
-texture = ExtResource("2_x4tpj")
+scale = Vector2(4, 4)
+texture = ExtResource("2_poqix")
+
+[node name="wheel2" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+rotation = -1.5708
+scale = Vector2(4, 4)
+texture = ExtResource("3_eptdu")
+
+[node name="wheel3" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+rotation = -3.14159
+scale = Vector2(4, 4)
+texture = ExtResource("4_brfi3")
+
+[node name="wheel4" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+rotation = 1.5708
+scale = Vector2(4, 4)
+texture = ExtResource("5_bite1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.5, 0.8)
-shape = SubResource("RectangleShape2D_rirgr")
+scale = Vector2(0.7, 0.7)
+shape = SubResource("CircleShape2D_lw7o2")
 
 [node name="PlayerArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
-scale = Vector2(0.5, 0.8)
-shape = SubResource("RectangleShape2D_rirgr")
+scale = Vector2(0.7, 0.7)
+shape = SubResource("CircleShape2D_gmjq2")
+
+[node name="wheel_change" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="fire_slash" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(8, 8)
+texture = ExtResource("6_p5oqj")
+
+[node name="firetail" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(8, 8)
+texture = ExtResource("7_mkou8")
 
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_player_area_area_entered"]
+[connection signal="area_exited" from="PlayerArea" to="." method="_on_player_area_area_exited"]
+[connection signal="timeout" from="wheel_change" to="." method="_on_wheel_change_timeout"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://2i2knex0snk1"]
 
-[ext_resource type="Texture2D" uid="uid://bga05661llvsc" path="res://icon.svg" id="1_hva0q"]
 [ext_resource type="Script" path="res://spike_node.gd" id="1_rj3ai"]
+[ext_resource type="Texture2D" uid="uid://dbcmf720o2sdc" path="res://assets/spike.png" id="2_axtlg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q7x0"]
-size = Vector2(126, 128)
+[sub_resource type="CircleShape2D" id="CircleShape2D_e4t11"]
+radius = 60.0333
 
 [node name="Spike-node" type="Node2D"]
 script = ExtResource("1_rj3ai")
@@ -13,12 +13,13 @@ script = ExtResource("1_rj3ai")
 scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_2q7x0")
+shape = SubResource("CircleShape2D_e4t11")
 
 [node name="Spike_sprite" type="Sprite2D" parent="."]
-self_modulate = Color(1, 0.458824, 0, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_hva0q")
+texture_filter = 1
+position = Vector2(-6.85453e-07, 3.57628e-07)
+scale = Vector2(3.33333, 3.42857)
+texture = ExtResource("2_axtlg")
 
 [node name="Move_Timer" type="Timer" parent="."]
 wait_time = 0.05
