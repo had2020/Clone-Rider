@@ -1,0 +1,5 @@
+res://old/player.tscn::e435751ff30c343850889c7eb8f26e9b::1725926013::res://.godot/exported/133200997/export-c9aaf90db822f88d3862eb5f43045d51-player.scn
+res://heart_gui.tscn::94a079880c4272146e27f711bcb70a3e::1726028638::res://.godot/exported/133200997/export-513abf4f9eb007d2c038bad4414fd96d-heart_gui.scn
+res://player_body.tscn::4157de8816fd870e59114d6e290a82e0::1726028638::res://.godot/exported/133200997/export-bbff33800491e51557ec2c41f0d8db4c-player_body.scn
+res://spike_node.tscn::471a4c0fd64ebdb833b97c240c82c3b8::1726028638::res://.godot/exported/133200997/export-4027670d49f6956512d157f6e55aee50-spike_node.scn
+res://world_node.tscn::acf0dbef7ee015f37649784aeb019f5f::1726028638::res://.godot/exported/133200997/export-a8d260e557abefca6ac88ff208ca67e8-world_node.scn
