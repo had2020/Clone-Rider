@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="Clone Rider"
+config/version="0.1"
 run/main_scene="res://world_node.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+config/icon="res://assets/clone_rider_icon Large.png"
 
 [autoload]
 

@@ -72,6 +72,7 @@ func old_wheel_ani():
 func _on_player_area_area_exited(area):
 	$firetail.visible = false
 
-
 func _on_animation_timer_timeout():
 	$"../AnimationPlayer".play("moving")
+	if $"../Music".playing == false:
+		$"../Music".play()

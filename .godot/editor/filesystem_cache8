@@ -1,23 +1,25 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1726026336
+::res://::1726027753
 export_presets.cfg::TextFile::-1::1725926339::0::1::::<><>::
 global.gd::GDScript::-1::1725926631::0::1::::<>Node<>::
 heart_gui.gd::GDScript::-1::1726018195::0::1::::<>Node2D<>::
-heart_gui.tscn::PackedScene::7679271438908213526::1726026336::0::1::::<><>::res://heart_gui.gd<>uid://dmeqb65ltayhg::::res://assets/heart.png
+heart_gui.tscn::PackedScene::7679271438908213526::1726027524::0::1::::<><>::res://heart_gui.gd<>uid://dmeqb65ltayhg::::res://assets/heart.png
 icon.svg::CompressedTexture2D::2809126921466873154::1725590592::1725590598::1::::<><>::
-player_body.gd::GDScript::-1::1726026287::0::1::::<>CharacterBody2D<>::
-player_body.tscn::PackedScene::4413594474295767150::1726026336::0::1::::<><>::res://player_body.gd<>uid://bvyh65iirp01n::::res://assets/playerwheel1.png<>uid://borxfqub5hcov::::res://assets/playerwheel2.png<>uid://bngqbxfhb6rew::::res://assets/playerwheel3.png<>uid://b5lrnly3m0ki2::::res://assets/playerwheel4.png<>uid://d4bjymsuatyma::::res://assets/Fireparticle.png<>uid://ccr1th00c64vb::::res://assets/firetail.png
+player_body.gd::GDScript::-1::1726027048::0::1::::<>CharacterBody2D<>::
+player_body.tscn::PackedScene::4413594474295767150::1726027753::0::1::::<><>::res://player_body.gd<>uid://bvyh65iirp01n::::res://assets/playerwheel1.png<>uid://borxfqub5hcov::::res://assets/playerwheel2.png<>uid://bngqbxfhb6rew::::res://assets/playerwheel3.png<>uid://b5lrnly3m0ki2::::res://assets/playerwheel4.png<>uid://d4bjymsuatyma::::res://assets/Fireparticle.png<>uid://ccr1th00c64vb::::res://assets/firetail.png
 Score_label.gd::GDScript::-1::1726021008::0::1::::<>Label<>::
 SpawnPoints.gd::GDScript::-1::1725926013::0::1::::<>Node2D<>::
 spike_node.gd::GDScript::-1::1725926013::0::1::::<>Node2D<>::
-spike_node.tscn::PackedScene::1913271707065011618::1726026336::0::1::::<><>::res://spike_node.gd<>uid://dbcmf720o2sdc::::res://assets/spike.png
-world_node.tscn::PackedScene::3537840678291866972::1726026336::0::1::::<><>::uid://bga05661llvsc::::res://icon.svg<>uid://b348iyeanmyoc::::res://player_body.tscn<>uid://cy6au7dklp704::::res://assets/grass.png<>res://SpawnPoints.gd<>res://Score_label.gd
-::res://assets/::1726026648
+spike_node.tscn::PackedScene::1913271707065011618::1726027524::0::1::::<><>::res://spike_node.gd<>uid://dbcmf720o2sdc::::res://assets/spike.png
+world_node.tscn::PackedScene::3537840678291866972::1726027524::0::1::::<><>::uid://bga05661llvsc::::res://icon.svg<>uid://b348iyeanmyoc::::res://player_body.tscn<>uid://cy6au7dklp704::::res://assets/grass.png<>res://SpawnPoints.gd<>res://Score_label.gd<>uid://do0lwbir4uq27::::res://assets/Arrows.png
+::res://assets/::1726028456
 Arrows.png::CompressedTexture2D::8194222545943336710::1726026648::1726026648::1::::<><>::
+clone_rider_icon Large.png::CompressedTexture2D::2037402700408949052::1726027727::1726027727::1::::<><>::
 Fireparticle.png::CompressedTexture2D::9197392865321082384::1726025472::1726025472::1::::<><>::
 firetail.png::CompressedTexture2D::4949926455800776503::1726025565::1726025565::1::::<><>::
 grass.png::CompressedTexture2D::6521406726804229527::1726018195::1726018195::1::::<><>::
 heart.png::CompressedTexture2D::8010760618523294180::1726021023::1726021023::1::::<><>::
+Intergalactic Odyssey.ogg::AudioStreamOggVorbis::4513996012763686572::1726028456::1726028457::1::::<><>::
 playerwheel1.png::CompressedTexture2D::3910413433195392877::1726023243::1726023243::1::::<><>::
 playerwheel2.png::CompressedTexture2D::3405565207603217841::1726023243::1726023243::1::::<><>::
 playerwheel3.png::CompressedTexture2D::3312236391271746954::1726023243::1726023243::1::::<><>::

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bqn0ypi8e5jg3"]
+[gd_scene load_steps=11 format=3 uid="uid://bqn0ypi8e5jg3"]
 
 [ext_resource type="Texture2D" uid="uid://bga05661llvsc" path="res://icon.svg" id="1_prwiq"]
 [ext_resource type="PackedScene" uid="uid://b348iyeanmyoc" path="res://player_body.tscn" id="2_folq2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://SpawnPoints.gd" id="3_u7e86"]
 [ext_resource type="Script" path="res://Score_label.gd" id="4_vmr08"]
 [ext_resource type="Texture2D" uid="uid://do0lwbir4uq27" path="res://assets/Arrows.png" id="6_g7p52"]
+[ext_resource type="AudioStream" uid="uid://b5ku4cgej4il5" path="res://assets/Intergalactic Odyssey.ogg" id="7_av3it"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i40n8"]
 size = Vector2(127, 63.5)
@@ -174,6 +175,11 @@ z_index = -6
 position = Vector2(576, 336)
 scale = Vector2(24, 65)
 texture = ExtResource("2_rgtuv")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_av3it")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="timeout" from="SpawnPoints/Timer" to="SpawnPoints" method="_on_timer_timeout"]
 [connection signal="timeout" from="Score_label/score_timer" to="Score_label" method="_on_score_timer_timeout"]
